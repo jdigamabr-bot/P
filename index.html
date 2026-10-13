@@ -1,194 +1,632 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#070914" />
-  <title>TechVora NebulaVerse | Explore Beyond</title>
-  <meta name="description" content="Enter NebulaVerse — a futuristic TechVora universe of AI tools, secret missions, and student-built projects." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090b20">
+<title>NEBULA VERSE | TechVora</title>
+
+<style>
+:root {
+  --bg:#090b20;
+  --card:#171b38;
+  --text:#f5f6ff;
+  --muted:#b4bddc;
+  --cyan:#66efff;
+  --purple:#9c83ff;
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:radial-gradient(ellipse at top,#25205d,var(--bg) 65%);
+  color:var(--text);
+}
+a {color:var(--cyan);text-decoration:none}
+header {
+  position:sticky;top:0;z-index:10;
+  padding:16px;
+  background:#090b20ed;
+  border-bottom:1px solid #494878;
+}
+nav {
+  max-width:1100px;margin:auto;
+  display:flex;justify-content:space-between;
+  align-items:center;gap:15px;flex-wrap:wrap;
+}
+nav strong {font-size:22px;color:var(--cyan)}
+nav div {display:flex;gap:12px;flex-wrap:wrap}
+nav a {font-size:14px}
+.wrap {width:min(1100px,92%);margin:auto}
+.hero {
+  min-height:400px;padding:65px 0;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:25px;align-items:center;
+}
+h1 {font-size:clamp(38px,7vw,72px);margin:10px 0}
+h2 {color:var(--cyan)}
+p {line-height:1.6;color:var(--muted)}
+.orb {
+  width:min(270px,65vw);aspect-ratio:1;
+  margin:auto;border-radius:50%;
+  background:radial-gradient(circle at 30% 25%,#fff,#a38aff 12%,#4734a7 40%,#07152f 72%);
+  box-shadow:0 0 65px #8271ff80;
+  animation:float 5s infinite ease-in-out;
+}
+@keyframes float {50%{transform:translateY(-13px)}}
+section {padding:35px 0;scroll-margin-top:90px}
+.grid {display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card {
+  background:var(--card);border:1px solid #41476e;
+  border-radius:16px;padding:20px;min-width:0;
+}
+.card h3 {color:#e0d9ff}
+button,.btn {
+  display:inline-block;padding:11px 15px;
+  background:linear-gradient(110deg,#64eaff,#a38aff);
+  color:#090b20;font-weight:bold;border:0;
+  border-radius:9px;cursor:pointer;margin:5px 0;
+}
+input,select,textarea {
+  width:100%;padding:12px;margin:6px 0;
+  border-radius:8px;border:1px solid #555b88;
+  background:#0c1028;color:white;font:inherit;
+}
+textarea {min-height:90px}
+.result {
+  white-space:pre-wrap;overflow-wrap:anywhere;
+  background:#0c1028;border-radius:9px;
+  padding:12px;margin:10px 0;color:#e2e9ff;
+}
+.row {display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.muted {color:var(--muted)}
+.hidden {display:none!important}
+footer {
+  text-align:center;padding:30px 12px;
+  border-top:1px solid #41476e;
+}
+@media(max-width:750px) {
+  .hero,.row {grid-template-columns:1fr}
+  .grid {grid-template-columns:1fr}
+  .orb {width:190px}
+  nav {align-items:flex-start}
+}
+</style>
 </head>
+
 <body>
-  <div class="stars stars-one" aria-hidden="true"></div>
-  <div class="stars stars-two" aria-hidden="true"></div>
-  <div class="nebula nebula-one" aria-hidden="true"></div>
-  <div class="nebula nebula-two" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="TechVora home">
-      <span class="brand-mark">TV</span>
-      <span class="brand-name">TECH<span>VORA</span><small>NEBULAVERSE</small></span>
-    </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-    <nav class="nav-links" id="navLinks">
-      <a href="#universe">Universe</a>
-      <a href="#ai-lab">AI Lab</a>
-      <a href="#missions">Missions</a>
-      <a href="#team">Our Team</a>
-      <a class="nav-cta" href="#launch">Launch Site ↗</a>
-    </nav>
-  </header>
+<header>
+<nav>
+<strong>✦ NEBULA VERSE</strong>
+<div>
+<a href="#home">Home</a>
+<a href="#vtu">VTU Zone</a>
+<a href="#tools">Smart Tools</a>
+<a href="#login">Student Login</a>
+<a href="#game">Game</a>
+<a href="#team">Team</a>
+</div>
+</nav>
+</header>
 
-  <main>
-    <section class="hero section-wrap" id="home">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="status-dot"></span> SYSTEM ONLINE <span class="eyebrow-line"></span> SECTOR 07</div>
-        <h1>THE FUTURE<br>IS <span class="gradient-text">UNCHARTED.</span></h1>
-        <p class="hero-description">Welcome to <strong>NebulaVerse</strong> — a digital universe built by TechVora. Explore AI experiments, unlock secret missions, and discover what happens when curiosity meets code.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#universe">Explore Universe <span>↗</span></a>
-          <a class="button button-ghost" href="#missions"><span class="play-icon">▶</span> Start a Mission</a>
-        </div>
-        <div class="hero-stats">
-          <div><strong>∞</strong><span>Ideas to explore</span></div>
-          <div><strong>03</strong><span>Core experiences</span></div>
-          <div><strong>01</strong><span>Shared universe</span></div>
-        </div>
-      </div>
-      <div class="hero-art" aria-label="Decorative animated planet">
-        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
-        <div class="planet">
-          <div class="planet-shine"></div><div class="planet-ring"></div>
-        </div>
-        <div class="moon moon-one"></div><div class="moon moon-two"></div>
-        <div class="floating-label label-top"><span class="mini-dot"></span> NEBULA CORE <b>ACTIVE</b></div>
-        <div class="floating-label label-bottom"><span class="signal-icon">⌁</span> SIGNAL DETECTED <b>98.7%</b></div>
-        <div class="coordinate">19° 04' N<br>72° 52' E</div>
-      </div>
-      <div class="scroll-cue"><span></span> SCROLL TO EXPLORE</div>
-    </section>
+<main>
 
-    <section class="section-wrap universe-section" id="universe">
-      <div class="section-heading">
-        <div><div class="eyebrow">01 / THE EXPERIENCE</div><h2>Choose your <span class="gradient-text">dimension.</span></h2></div>
-        <p>Three gateways. One universe. Pick a path and see where it leads.</p>
-      </div>
-      <div class="dimension-grid">
-        <article class="dimension-card card-space">
-          <div class="card-topline"><span>DIMENSION 01</span><span class="card-icon">✧</span></div>
-          <div class="dimension-visual visual-galaxy"><div class="mini-planet"></div><div class="visual-orbit"></div><div class="visual-star">✦</div></div>
-          <h3>Cosmic Explorer</h3>
-          <p>Navigate the unknown. Find hidden signals in a living digital galaxy.</p>
-          <a href="#launch" class="text-link">Enter dimension <span>↗</span></a>
-        </article>
-        <article class="dimension-card card-ai">
-          <div class="card-topline"><span>DIMENSION 02</span><span class="card-icon">⌘</span></div>
-          <div class="dimension-visual visual-ai"><div class="ai-orb">AI</div><span class="ai-node node-a"></span><span class="ai-node node-b"></span><span class="ai-node node-c"></span></div>
-          <h3>Intelligence Lab</h3>
-          <p>Try small AI-inspired utilities and experiment with your next big idea.</p>
-          <a href="#ai-lab" class="text-link">Open AI lab <span>↗</span></a>
-        </article>
-        <article class="dimension-card card-mission">
-          <div class="card-topline"><span>DIMENSION 03</span><span class="card-icon">⌁</span></div>
-          <div class="dimension-visual visual-mission"><div class="mission-lock">⌑</div><div class="lock-ring"></div><span class="lock-spark">✦</span></div>
-          <h3>Secret Protocol</h3>
-          <p>Solve encrypted clues, collect access codes, and unlock the next level.</p>
-          <a href="#missions" class="text-link">Accept mission <span>↗</span></a>
-        </article>
-      </div>
-    </section>
+<div class="wrap hero" id="home">
+<div>
+<p>TECHVORA PRESENTS · YOUR DIGITAL UNIVERSE</p>
+<h1>Explore <span style="color:#66efff">Beyond</span></h1>
+<h2>Learn. Build. Grow.</h2>
+<p>
+NEBULA VERSE is a student portal for academic resources,
+project ideas, study planning and student account management.
+</p>
+<a class="btn" href="#login">Student Portal</a>
+<a class="btn" href="#tools">Explore Tools</a>
+</div>
+<div class="orb"></div>
+</div>
 
-    <section class="ai-section" id="ai-lab">
-      <div class="section-wrap ai-layout">
-        <div class="ai-intro">
-          <div class="eyebrow">02 / EXPERIMENTAL TECHNOLOGY</div>
-          <h2>Meet the <span class="gradient-text">AI Lab.</span></h2>
-          <p>A small playground for big ideas. These browser-based demos work locally and do not send your text to a server.</p>
-          <div class="ai-feature-list">
-            <div><span class="feature-check">✓</span><span><strong>Instant feedback</strong><small>Results appear right here in your browser.</small></span></div>
-            <div><span class="feature-check">✓</span><span><strong>Beginner friendly</strong><small>Try it, tweak it, learn how it works.</small></span></div>
-            <div><span class="feature-check">✓</span><span><strong>AI-ready foundation</strong><small>Connect a real AI API later, securely.</small></span></div>
-          </div>
-        </div>
-        <div class="ai-console">
-          <div class="console-header"><div class="console-lights"><i></i><i></i><i></i></div><span>TV // INTELLIGENCE CONSOLE</span><span class="console-live">● LIVE DEMO</span></div>
-          <div class="console-tabs" role="tablist">
-            <button class="console-tab active" data-tool="idea" role="tab" aria-selected="true">Idea Spark</button>
-            <button class="console-tab" data-tool="bio" role="tab" aria-selected="false">Bio Builder</button>
-            <button class="console-tab" data-tool="study" role="tab" aria-selected="false">Study Planner</button>
-          </div>
-          <div class="tool-panel">
-            <label for="aiInput" id="inputLabel">What are you dreaming of building?</label>
-            <textarea id="aiInput" rows="3" placeholder="Example: an app that helps students learn faster..."></textarea>
-            <div class="tool-footer"><span id="toolHint">Describe your idea in one sentence.</span><button class="button button-primary button-small" id="generateBtn">Generate ↗</button></div>
-            <div class="ai-output" id="aiOutput" aria-live="polite"><span class="output-icon">✦</span><div><strong>Awaiting input...</strong><p>Your result will appear here.</p></div></div>
-            <p class="demo-note">DEMO MODE · This is a simple local generator, not a connected AI model.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<section id="vtu">
+<div class="wrap">
+<h2>🎓 VTU Student Zone</h2>
+<div class="grid">
+<div class="card">
+<h3>🏛️ VTU Website</h3>
+<p>Visit the official university website.</p>
+<a class="btn" href="https://vtu.ac.in/" target="_blank">Open VTU</a>
+</div>
+<div class="card">
+<h3>📊 Results</h3>
+<p>Check results on the official portal.</p>
+<a class="btn" href="https://results.vtu.ac.in/" target="_blank">Check Results</a>
+</div>
+<div class="card">
+<h3>📚 Syllabus & Notices</h3>
+<p>Find official circulars and academic information.</p>
+<a class="btn" href="https://vtu.ac.in/en/circulars/" target="_blank">Circulars</a>
+<a class="btn" href="https://vtu.ac.in/" target="_blank">Syllabus Search</a>
+</div>
+<div class="card">
+<h3>🧮 SGPA Calculator</h3>
+<p>Enter grade points and credits, one pair per line.</p>
+<textarea id="grades" placeholder="Grade points,credits&#10;8,4&#10;9,3&#10;7,3"></textarea>
+<button id="calcBtn">Calculate GPA</button>
+<div id="gpaResult" class="result">Your GPA will appear here.</div>
+<p class="muted">This is a generic weighted calculator. Confirm your university's official calculation method.</p>
+</div>
+<div class="card">
+<h3>📅 Academic Calendar</h3>
+<p>Visit VTU and verify the current academic calendar.</p>
+<a class="btn" href="https://vtu.ac.in/" target="_blank">Open Official Site</a>
+</div>
+<div class="card">
+<h3>📝 Notes Library</h3>
+<input id="resourceTitle" placeholder="Resource title">
+<input id="resourceUrl" placeholder="Public HTTPS link">
+<button id="addResource">Save Link</button>
+<div id="resources" class="result"></div>
+<p class="muted">Links are saved in this browser only.</p>
+</div>
+</div>
+</div>
+</section>
 
-    <section class="section-wrap mission-section" id="missions">
-      <div class="section-heading">
-        <div><div class="eyebrow">03 / CLASSIFIED ACCESS</div><h2>Can you crack the <span class="gradient-text">protocol?</span></h2></div>
-        <p>One clue stands between you and clearance. Think carefully, explorer.</p>
-      </div>
-      <div class="mission-board">
-        <div class="mission-left">
-          <div class="classified-tag"><span>▣</span> CLASSIFIED // LEVEL 01</div>
-          <div class="mission-symbol">⌁</div>
-          <h3>Signal in the Static</h3>
-          <p>A transmission was recovered from the edge of the NebulaVerse. Decode the clue to unlock the access code.</p>
-          <div class="mission-meta"><span>◷ 2 MIN</span><span>◇ LOGIC</span><span>▣ BEGINNER</span></div>
-        </div>
-        <div class="mission-right">
-          <div class="terminal-top"><span>INCOMING TRANSMISSION</span><span class="blink">● ENCRYPTED</span></div>
-          <p class="terminal-clue">“I have keys but no locks. I have space but no room. You can enter, but you cannot go outside. What am I?”</p>
-          <form id="missionForm" class="mission-form">
-            <label for="missionAnswer">ENTER YOUR ANSWER</label>
-            <div class="answer-row"><input id="missionAnswer" type="text" placeholder="Type your answer..." autocomplete="off" required><button class="button button-primary" type="submit">Decrypt ↗</button></div>
-          </form>
-          <div class="mission-feedback" id="missionFeedback" aria-live="polite">Awaiting response, agent...</div>
-          <button class="hint-button" id="hintBtn" type="button">Need a hint? +</button>
-          <div class="mission-progress"><span>MISSION PROGRESS</span><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><strong id="progressText">0 / 1</strong></div>
-        </div>
-      </div>
-    </section>
+<section id="tools">
+<div class="wrap">
+<h2>🧠 Smart Tools Lab</h2>
+<div class="grid">
+<div class="card">
+<h3>🚀 Project Idea Generator</h3>
+<select id="ideaCategory">
+<option>Artificial Intelligence</option>
+<option>Web Development</option>
+<option>Education</option>
+<option>Cybersecurity</option>
+<option>Games</option>
+<option>Environment</option>
+</select>
+<button id="ideaBtn">Generate Ideas</button>
+<div id="ideaResult" class="result">Your project ideas will appear here.</div>
+<p class="muted">Ideas are generated from built-in suggestions, not a live AI model.</p>
+</div>
 
-    <section class="team-section" id="team">
-      <div class="section-wrap">
-        <div class="section-heading">
-          <div><div class="eyebrow">04 / THE PEOPLE BEHIND THE PORTAL</div><h2>Built by <span class="gradient-text">curiosity.</span></h2></div>
-          <p>A student team exploring design, code, and emerging technology together.</p>
-        </div>
-        <div class="team-grid">
-          <article class="team-card"><div class="avatar avatar-one">TV</div><span class="team-role">THE VISION</span><h3>Team Lead</h3><p>Ideas, planning & direction</p></article>
-          <article class="team-card"><div class="avatar avatar-two">{"</>"}</div><span class="team-role">THE BUILDER</span><h3>Developer</h3><p>Code, logic & functionality</p></article>
-          <article class="team-card"><div class="avatar avatar-three">✧</div><span class="team-role">THE DESIGNER</span><h3>UI / UX Designer</h3><p>Visuals, experience & details</p></article>
-          <article class="team-card"><div class="avatar avatar-four">⌘</div><span class="team-role">THE EXPLORER</span><h3>Researcher</h3><p>Testing, learning & new ideas</p></article>
-        </div>
-        <p class="team-note">Replace these sample roles with your real group members' names and photos when you're ready.</p>
-      </div>
-    </section>
+<div class="card">
+<h3>📅 Study Planner</h3>
+<input id="studySubject" placeholder="Subject name">
+<input id="studyHours" type="number" min="1" max="15" placeholder="Study hours">
+<button id="studyBtn">Create Plan</button>
+<div id="studyResult" class="result"></div>
+</div>
 
-    <section class="launch-section section-wrap" id="launch">
-      <div class="launch-card">
-        <div class="launch-grid" aria-hidden="true"></div>
-        <div class="eyebrow">ALL SYSTEMS READY</div>
-        <h2>Your universe.<br><span class="gradient-text">Your next move.</span></h2>
-        <p>Every great project starts with one small launch. Make something that matters.</p>
-        <a class="button button-primary" href="#home">Return to orbit ↑</a>
-        <div class="launch-orb" aria-hidden="true"></div>
-      </div>
-    </section>
-  </main>
+<div class="card">
+<h3>📄 Resume Helper</h3>
+<input id="resumeName" placeholder="Your name">
+<input id="resumeSkills" placeholder="Your actual skills">
+<input id="resumeGoal" placeholder="Career goal">
+<button id="resumeBtn">Draft Summary</button>
+<div id="resumeResult" class="result"></div>
+<p class="muted">Review the generated draft and keep only accurate information.</p>
+</div>
+</div>
+</div>
+</section>
 
-  <footer class="site-footer">
-    <a class="brand footer-brand" href="#home"><span class="brand-mark">TV</span><span class="brand-name">TECH<span>VORA</span><small>NEBULAVERSE</small></span></a>
-    <p>© <span id="year"></span> TechVora · Made with curiosity, powered by code.</p>
-    <a href="#home" class="back-top">Back to top ↑</a>
-  </footer>
-</body>
-  <div style="text-align:center; margin:30px;">
-  <h2>TechVora NebulaVerse</h2>
-  <a href="TechVora_NebulaVerse.pdf" download
-     style="background:#6c3cff; color:white; padding:12px 20px;
-     text-decoration:none; border-radius:8px;">
-    Download Project PDF
-  </a>
-  </div>
-</html>
+<section id="login">
+<div class="wrap">
+<h2>🔐 NEBULA VERSE Student Portal</h2>
+<p>
+Firebase Authentication and Cloud Firestore are used for real
+account authentication and student records after configuration.
+</p>
+
+<div class="row">
+<div class="card">
+<h3>Student Registration</h3>
+<input id="studentName" placeholder="Full name">
+<input id="studentUSN" placeholder="College USN">
+<input id="studentBranch" placeholder="Branch">
+<select id="studentSemester">
+<option value="">Select semester</option>
+<option>1</option><option>2</option><option>3</option>
+<option>4</option><option>5</option><option>6</option>
+<option>7</option><option>8</option>
+</select>
+<input id="authEmail" type="email" placeholder="Student email">
+<input id="authPassword" type="password" minlength="6" placeholder="Password (6+ characters)">
+<button id="registerBtn">Create Account</button>
+<button id="loginBtn">Sign In</button>
+<button id="resetBtn">Forgot Password</button>
+<button id="logoutBtn">Logout</button>
+<div id="authStatus" class="result">
+Firebase setup is required before real login can work.
+</div>
+</div>
+
+<div class="card">
+<h3>🎓 Student Dashboard</h3>
+<div id="studentDashboard" class="result">
+Sign in to see your profile and published results.
+</div>
+<div id="studentResults" class="result">Results will appear here.</div>
+<button id="refreshBtn">Refresh Dashboard</button>
+
+<div id="adminPanel" class="hidden">
+<hr>
+<h3>🛡️ Admin Panel</h3>
+<button id="loadStudentsBtn">Load Students</button>
+<div id="adminStudents" class="result"></div>
+<input id="resultUID" placeholder="Student UID">
+<input id="resultSemester" type="number" min="1" max="8" placeholder="Semester">
+<input id="resultSGPA" type="number" min="0" max="10" step=".01" placeholder="Verified SGPA">
+<textarea id="resultNotes" placeholder="Verification notes (optional)"></textarea>
+<button id="publishBtn">Publish Result</button>
+</div>
+</div>
+</div>
+
+<p class="muted">
+Important: a USN typed by a student is not proof of enrollment.
+An authorized administrator must verify student identity.
+Only publish results you are authorized to manage.
+</p>
+</div>
+</section>
+
+<section id="game">
+<div class="wrap">
+<h2>🎮 Cosmic Number Challenge</h2>
+<div class="card">
+<p>Guess the secret number from 1 to 50. You have seven attempts.</p>
+<h1 id="gameNumber">?</h1>
+<input id="guessInput" type="number" min="1" max="50" placeholder="Your guess">
+<button id="guessBtn">Guess</button>
+<button id="newGameBtn">New Game</button>
+<div id="gameMessage" class="result">Ready to play?</div>
+<p>Attempts left: <span id="attempts">7</span></p>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="wrap">
+<h2>🚀 Project Hub</h2>
+<div class="grid">
+<div class="card"><h3>🌌 NEBULA VERSE</h3><p>Student portal and project hub.</p></div>
+<div class="card"><h3>🤖 TechVora Resume Analyzer</h3><p>Future upgrade: real resume parsing and AI feedback through a secure backend.</p></div>
+<div class="card"><h3>💡 Next Project</h3><p>Share your team's next project idea here.</p></div>
+</div>
+</div>
+</section>
+
+<section id="team">
+<div class="wrap">
+<h2>👥 Meet Team TechVora</h2>
+<div class="grid">
+<div class="card"><h3>Digambar</h3><p>Project Lead</p><p>Planning, coordination and project integration.</p></div>
+<div class="card"><h3>Dattareddy</h3><p>Frontend Developer</p><p>HTML, CSS and responsive interface.</p></div>
+<div class="card"><h3>Preeti</h3><p>Documentation & Research</p><p>Project guide and VTU resource research.</p></div>
+<div class="card"><h3>Bhegyeshree</h3><p>Testing & Design</p><p>UI review, testing and content organization.</p></div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<strong>✦ NEBULA VERSE · by TechVora</strong>
+<p>Learn • Build • Grow 🚀</p>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+
+// GPA calculator
+$("calcBtn").onclick = () => {
+  const lines = $("grades").value.trim().split(/\n/);
+  let total = 0, credits = 0;
+  for (const line of lines) {
+    const parts = line.split(",");
+    if (parts.length !== 2) continue;
+    const grade = Number(parts[0]), credit = Number(parts[1]);
+    if (!Number.isFinite(grade) || !Number.isFinite(credit) ||
+        grade < 0 || credit <= 0) {
+      $("gpaResult").textContent = "Check grade points and credits.";
+      return;
+    }
+    total += grade * credit;
+    credits += credit;
+  }
+  $("gpaResult").textContent = credits
+    ? "Weighted GPA: " + (total / credits).toFixed(2)
+    : "Enter values like 8,4 on separate lines.";
+};
+
+// Project idea generator
+const ideas = {
+  "Artificial Intelligence": [
+    "Student FAQ assistant with curated answers",
+    "Resume skill matcher",
+    "Lecture note summarizer"
+  ],
+  "Web Development": [
+    "College event registration portal",
+    "Student portfolio builder",
+    "Campus lost-and-found website"
+  ],
+  "Education": [
+    "Topic-wise quiz platform",
+    "Student notes sharing portal",
+    "Study streak tracker"
+  ],
+  "Cybersecurity": [
+    "Phishing awareness quiz",
+    "Password safety checker",
+    "Cyber safety learning portal"
+  ],
+  "Games": [
+    "Endless runner game",
+    "Space quiz with levels",
+    "Memory matching game"
+  ],
+  "Environment": [
+    "Waste segregation learning app",
+    "Campus tree tracking portal",
+    "Energy saving awareness tool"
+  ]
+};
+
+$("ideaBtn").onclick = () => {
+  const list = ideas[$("ideaCategory").value] || [];
+  $("ideaResult").textContent = list.map((x,i) => `${i+1}. ${x}`).join("\n");
+};
+
+// Study planner
+$("studyBtn").onclick = () => {
+  const subject = $("studySubject").value.trim();
+  const hours = Number($("studyHours").value);
+  if (!subject || !Number.isInteger(hours) || hours < 1 || hours > 15) {
+    $("studyResult").textContent = "Enter a subject and 1–15 study hours.";
+    return;
+  }
+  const blocks = Math.ceil(hours);
+  $("studyResult").textContent =
+    `Study plan for ${subject}\n` +
+    `1. ${Math.ceil(blocks*0.5)} hour(s): Learn concepts\n` +
+    `2. ${Math.floor(blocks*0.3)} hour(s): Solve questions\n` +
+    `3. Remaining time: Revise and take a short test.\n` +
+    `Take a 5–10 minute break after each focused session.`;
+};
+
+// Resume helper
+$("resumeBtn").onclick = () => {
+  const name = $("resumeName").value.trim() || "Motivated student";
+  const skills = $("resumeSkills").value.trim();
+  const goal = $("resumeGoal").value.trim() || "entry-level opportunity";
+  if (!skills) {
+    $("resumeResult").textContent = "Enter your actual skills first.";
+    return;
+  }
+  $("resumeResult").textContent =
+    `${name} is seeking a ${goal} opportunity. ` +
+    `Has foundational knowledge of ${skills} and is eager to learn, ` +
+    `collaborate and contribute to practical projects.\n\n` +
+    `Review this draft and remove any claim that is not accurate.`;
+};
+
+// Local resource links
+function renderResources() {
+  const box = $("resources");
+  box.replaceChildren();
+  let items = [];
+  try { items = JSON.parse(localStorage.getItem("nvResources") || "[]"); }
+  catch(e) {}
+  if (!items.length) {
+    box.textContent = "No saved links yet.";
+    return;
+  }
+  items.forEach(item => {
+    const p = document.createElement("p");
+    const a = document.createElement("a");
+    a.href = item.url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.textContent = item.title;
+    p.appendChild(a);
+    box.appendChild(p);
+  });
+}
+$("addResource").onclick = () => {
+  const title = $("resourceTitle").value.trim();
+  const url = $("resourceUrl").value.trim();
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== "https:" || !title) throw Error();
+    const items = JSON.parse(localStorage.getItem("nvResources") || "[]");
+    items.push({title,url});
+    localStorage.setItem("nvResources", JSON.stringify(items));
+    $("resourceTitle").value = "";
+    $("resourceUrl").value = "";
+    renderResources();
+  } catch(e) {
+    alert("Enter a title and a valid HTTPS link.");
+  }
+};
+renderResources();
+
+// Mini-game
+let secret = 0, remaining = 7, finished = false;
+function newGame() {
+  secret = Math.floor(Math.random()*50)+1;
+  remaining = 7;
+  finished = false;
+  $("gameNumber").textContent = "?";
+  $("gameMessage").textContent = "Guess from 1 to 50.";
+  $("guessInput").value = "";
+  $("guessInput").disabled = false;
+  $("guessBtn").disabled = false;
+  $("attempts").textContent = remaining;
+}
+$("newGameBtn").onclick = newGame;
+$("guessBtn").onclick = () => {
+  if (finished) return;
+  const guess = Number($("guessInput").value);
+  if (!Number.isInteger(guess) || guess < 1 || guess > 50) {
+    $("gameMessage").textContent = "Enter a whole number from 1 to 50.";
+    return;
+  }
+  remaining--;
+  $("attempts").textContent = remaining;
+  if (guess === secret) {
+    $("gameMessage").textContent = "🎉 Correct! You cracked the code!";
+    $("gameNumber").textContent = secret;
+    finished = true;
+  } else if (remaining === 0) {
+    $("gameMessage").textContent = "Game over! The number was " + secret;
+    $("gameNumber").textContent = secret;
+    finished = true;
+  } else {
+    $("gameMessage").textContent = guess < secret ? "Too low!" : "Too high!";
+  }
+  if (finished) {
+    $("guessBtn").disabled = true;
+    $("guessInput").disabled = true;
+  }
+};
+newGame();
+</script>
+
+<!-- REAL FIREBASE AUTHENTICATION -->
+<script type="module">
+import { initializeApp } from
+  "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+import {
+  getAuth, createUserWithEmailAndPassword,
+  signInWithEmailAndPassword, sendPasswordResetEmail,
+  signOut, onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
+import {
+  getFirestore, doc, setDoc, getDoc, getDocs,
+  collection, updateDoc, serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+
+/*
+  Firebase Console > Project settings > Your apps > Web app.
+  Replace every PASTE_ value with your own Firebase web configuration.
+*/
+const firebaseConfig = {
+  apiKey: "PASTE_YOUR_API_KEY",
+  authDomain: "PASTE_YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "PASTE_YOUR_PROJECT_ID",
+  storageBucket: "PASTE_YOUR_PROJECT_ID.firebasestorage.app",
+  messagingSenderId: "PASTE_YOUR_MESSAGING_SENDER_ID",
+  appId: "PASTE_YOUR_APP_ID"
+};
+
+const $ = id => document.getElementById(id);
+const status = text => $("authStatus").textContent = text;
+let auth = null, db = null, currentAdmin = false;
+
+function friendly(error) {
+  const messages = {
+    "auth/invalid-email":"Enter a valid email address.",
+    "auth/invalid-credential":"Incorrect email or password.",
+    "auth/email-already-in-use":"This email is already registered.",
+    "auth/weak-password":"Use a stronger password with at least 6 characters.",
+    "auth/too-many-requests":"Too many attempts. Try again later.",
+    "auth/network-request-failed":"Network error. Check your internet."
+  };
+  return messages[error.code] || error.message || "Something went wrong.";
+}
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[c]);
+}
+
+const configReady =
+  firebaseConfig.apiKey &&
+  !firebaseConfig.apiKey.includes("PASTE_") &&
+  firebaseConfig.projectId &&
+  !firebaseConfig.projectId.includes("PASTE_");
+
+if (!configReady) {
+  status("Firebase setup required. Replace the PASTE_ values in this file, then enable Email/Password Authentication and Firestore in Firebase Console.");
+} else {
+  const app = initializeApp(firebaseConfig);
+  auth = getAuth(app);
+  db = getFirestore(app);
+
+  $("registerBtn").onclick = async () => {
+    const name = $("studentName").value.trim();
+    const usn = $("studentUSN").value.trim().toUpperCase();
+    const branch = $("studentBranch").value.trim().toUpperCase();
+    const semester = Number($("studentSemester").value);
+    const email = $("authEmail").value.trim();
+    const password = $("authPassword").value;
+
+    if (!name || !usn || !branch || !email ||
+        !Number.isInteger(semester) || semester < 1 ||
+        semester > 8 || password.length < 6) {
+      status("Complete all registration fields. Semester must be 1–8 and password at least 6 characters.");
+      return;
+    }
+
+    try {
+      status("Creating account...");
+      const credential = await createUserWithEmailAndPassword(auth,email,password);
+      await setDoc(doc(db,"users",credential.user.uid), {
+        uid:credential.user.uid,
+        fullName:name,
+        usn,
+        branch,
+        semester,
+        email,
+        status:"pending",
+        createdAt:serverTimestamp()
+      });
+      status("Account created. Please wait for admin verification.");
+      await signOut(auth);
+    } catch(error) {
+      status(friendly(error));
+    }
+  };
+
+  $("loginBtn").onclick = async () => {
+    const email = $("authEmail").value.trim();
+    const password = $("authPassword").value;
+    if (!email || !password) {
+      status("Enter your email and password.");
+      return;
+    }
+    try {
+      status("Signing in...");
+      await signInWithEmailAndPassword(auth,email,password);
+    } catch(error) {
+      status(friendly(error));
+    }
+  };
+
+  $("resetBtn").onclick = async () => {
+    const email = $("authEmail").value.trim();
+    if (!email) {
+      status("Enter your email first.");
+      return;
+    }
+    try {
+      await sendPasswordResetEmail(auth,email);
+      status("If an account exists, a password reset email will be sent.");
+    } catch(error) {
+      status(friendly(error));
+    }
+  };
+
+  $("logoutBtn").onclick = async () => {
+    if (auth) await signOut(auth);
+    $("studentDashboard").textContent = "Signed out.";
+    $("studentResults").textContent = "Sign in to see results.";
+    $("adminPanel").classList.add("hidden");
+  };
+
